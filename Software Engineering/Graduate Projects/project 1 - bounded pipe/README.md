@@ -2,7 +2,7 @@
 
 Implement the data structure of the boundedPipe using different data structure -- just like  deque
 
-<img src="diagram.png" style="zoom:50%;" />
+<img src="notePicture/diagram.png" style="zoom:50%;" />
 
 ## circArrayPipe
 
@@ -10,7 +10,7 @@ Data structure: Array
 
 structure should look like this:
 
-<img src="circArrayPipe.png" alt="image-20220115025104226" style="zoom: 25%;" />
+<img src="notePicture/circArrayPipe.png" alt="image-20220115025104226" style="zoom: 25%;" />
 
 `first` is the position of the first element
 

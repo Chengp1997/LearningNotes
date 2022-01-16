@@ -13,11 +13,11 @@ What I had done:
 
 **class diagram**
 
-<img src="Diagram.png" alt="image-20220115031953831" style="zoom:50%;" />
+<img src="notePicture/Diagram.png" alt="image-20220115031953831" style="zoom:50%;" />
 
 **GUI**
 
-<img src="GUI.png" alt="image-20220115032315295" style="zoom:50%;" />
+<img src="notePicture/GUI.png" alt="image-20220115032315295" style="zoom:50%;" />
 
 
 
@@ -25,5 +25,5 @@ What I had done:
 
 Using offset to refactor the GUI
 
-<img src="offset.png" alt="image-20220115032438006" style="zoom:50%;" />
+<img src="notePicture/offset.png" alt="image-20220115032438006" style="zoom:50%;" />
 
