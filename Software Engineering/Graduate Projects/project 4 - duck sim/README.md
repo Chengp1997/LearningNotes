@@ -68,7 +68,7 @@ Create different types of duck and using different types of Bling class to decor
 
 The observer is a interface. The duck implement the interface. The duck factory is the subject. When duck join the committee, it register the subject factory. Therefore, when a new duck is created, the factory will notify all the observers.
 
-<img src="/Users/chengeping/Library/Application Support/typora-user-images/image-20220115173705878.png" alt="image-20220115173705878" style="zoom:50%;" />
+<img src="notePicture/observer2.png" alt="image-20220115173705878" style="zoom:50%;" />
 
 <img src="notePicture/observer.png" alt="image-20220115173718035" style="zoom:50%;" />
 
