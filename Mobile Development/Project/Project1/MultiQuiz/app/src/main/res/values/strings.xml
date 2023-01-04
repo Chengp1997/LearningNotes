@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">MultiQuiz</string>
+    <string name="capitalQuestion">Which is the capital of US?</string>
+    <string name="capital_0_answer">Washington.D.C</string>
+    <string name="capital_1_answer">New York</string>
+    <string name="capital_2_answer">Boston</string>
+    <string name="capital_3_answer">Los Angeles</string>
+
+    <string name="oceanQuestion">Which is the biggest Ocean?</string>
+    <string name="ocean_0_answer">Indian</string>
+    <string name="ocean_1_answer">Pacific</string>
+    <string name="ocean_2_answer">Arctic</string>
+    <string name="ocean_3_answer">Atlantic</string>
+
+    <string name="landSizeQuestion">Which is the biggest land of the world?</string>
+    <string name="landSize_0_answer">Africa</string>
+    <string name="landSize_1_answer">America</string>
+    <string name="landSize_2_answer">Asia</string>
+    <string name="landSize_3_answer">Europe</string>
+
+    <string name="richestQuestion">Who is the richest person int the world(2022)?</string>
+    <string name="richest_0_answer">Jeff Bezos</string>
+    <string name="richest_1_answer">Bill Gates</string>
+    <string name="richest_2_answer">Larry Page</string>
+    <string name="richest_3_answer">Elon Musk</string>
+
+    <string name="hint_button">HINT</string>
+    <string name="submit_button">SUBMIT</string>
+    <string name="correct_info">Correct!</string>
+    <string name="incorrect_info">Incorrect!</string>
+
+    <string name="results_text">Results</string>
+    <string name="correct_answers_text">Correct Answers: </string>
+    <string name="total_questions_text">Total Questions: </string>
+    <string name="hints_used_text">Hints Used: </string>
+    <string name="reset_button">Reset All</string>
+</resources>

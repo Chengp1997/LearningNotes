@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="16dp">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/dream_photo"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@color/material_dynamic_neutral30"
+                android:contentDescription="@string/dream_photo"
+                android:cropToPadding="true"
+                android:scaleType="centerInside" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dream_label"
+                    android:textAppearance="?attr/textAppearanceHeadline5" />
+
+                <EditText
+                    android:id="@+id/title_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints=""
+                    android:ems="10"
+                    android:inputType="text"
+                    android:minHeight="48dp"
+                    android:text="@string/title_text" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <CheckBox
+                        android:id="@+id/fulfilled_checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/fulfilled_checkbox" />
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <CheckBox
+                        android:id="@+id/deferred_checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/deferred_checkbox" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/last_updated_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            tools:text="@string/last_updated_text" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add_reflection_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:clickable="true"
+            android:theme="@style/Theme.MaterialComponents"
+            android:contentDescription="@string/add_reflection_button"
+            android:focusable="true"
+            android:src="@drawable/ic_add"
+            app:backgroundTint="@color/teal_700"
+            app:tint="@color/white" />
+
+    </LinearLayout>
+
+
+    <Space
+        android:layout_width="16dp"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/entry_label"
+            android:textAppearance="?attr/textAppearanceHeadline5" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/dream_entry_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem = "@layout/list_item_dream_entry"/>
+
+<!--        <Button-->
+<!--            android:id="@+id/entry_0_button"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:enabled="false"-->
+<!--            tools:text="@string/entry_0_button" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/entry_1_button"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:enabled="false"-->
+<!--            tools:text="@string/entry_1_button" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/entry_2_button"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:enabled="false"-->
+<!--            tools:text="@string/entry_2_button" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/entry_3_button"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:enabled="false"-->
+<!--            tools:text="@string/entry_3_button" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/entry_4_button"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:enabled="false"-->
+<!--            tools:text="@string/entry_4_button" />-->
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">DreamCatcher</string>
+    <!--  Detail view  -->
+    <string name="dream_label">Dream</string>
+    <string name="title_text">My First Dream</string>
+    <string name="last_updated_label">Last updated </string>
+    <string name="last_updated_text">Last updated 2022-09-10 at 11:12:13 AM</string>
+    <string name="fulfilled_checkbox">Fulfilled</string>
+    <string name="deferred_checkbox">Deferred</string>
+    <string name="entry_label">Entries</string>
+    <string name="entry_0_button">entry_0_button</string>
+    <string name="entry_1_button">entry_1_button</string>
+    <string name="entry_2_button">entry_2_button</string>
+    <string name="entry_3_button">entry_3_button</string>
+    <string name="entry_4_button">entry_4_button</string>
+    <string name="list_item_title">Dream title</string>
+    <string name="list_item_reflection_count">Reflection count</string>
+    <string name="reflection_hint">Enter reflection text</string>
+    <string name="reflection_dialog_title">Add Reflection</string>
+    <string name="reflection_dialog_positive">Add</string>
+    <string name="reflection_dialog_negative">Cancel</string>
+    <string name="add_reflection_button">Add Reflection</string>
+    <!-- menu action   -->
+    <string name="new_dream">New Dream</string>
+    <string name="no_dreams">No dreams right Now</string>
+    <!-- data format   -->
+    <string name="dream_report">%1$s%2$s%3$s%4$s</string>
+    <string name="dream_report_fulfilled">This dream has been Fulfilled.</string>
+    <string name="dream_report_deferred">This dream has been Deferred.</string>
+    <string name="dream_report_reflections">Reflections: </string>
+    <string name="share_dream">Share Dream</string>
+    <string name="dream_report_subject">DreamIntent Dream Report</string>
+    <string name="send_report">Send dream report via</string>
+
+    <string name="dream_photo">dream photo</string>
+    <string name="take_photo_menu">Take Photo</string>
+
+    <string name="list_item_entry_name">Entry Button</string>
+</resources>

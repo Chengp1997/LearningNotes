@@ -1,0 +1,103 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"/>
+    <TextView
+        android:id="@+id/question_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="24dp"
+        tools:text="@string/capitalQuestion" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"/>
+
+    <LinearLayout
+        android:id="@+id/answer_buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <Button
+            style="?android:buttonStyle"
+            android:id="@+id/answer_0_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/capital_0_answer" />
+
+        <Button
+            style="?android:buttonStyle"
+            android:id="@+id/answer_1_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/capital_1_answer"/>
+        <Button
+            style="?android:buttonStyle"
+            android:id="@+id/answer_2_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/capital_2_answer"/>
+        <Button
+            style="?android:buttonStyle"
+            android:id="@+id/answer_3_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/capital_3_answer"/>
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/hint_button"
+            style="?android:buttonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hint_button" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/submit_button"
+            style="?android:buttonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/submit_button" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"/>
+
+</LinearLayout>

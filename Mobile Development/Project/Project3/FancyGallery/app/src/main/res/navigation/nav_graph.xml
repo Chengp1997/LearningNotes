@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/gallery_fragment">
+    <fragment
+        android:id="@+id/gallery_fragment"
+        android:name="edu.vt.cs5254.fancygallery.GalleryFragment"
+        android:label="GalleryFragment" >
+        <action
+            android:id="@+id/show_photo"
+            app:destination="@id/photo_page_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/map_fragment"
+        android:name="edu.vt.cs5254.fancygallery.MapFragment"
+        android:label="MapFragment" >
+        <action
+            android:id="@+id/show_photo_from_marker"
+            app:destination="@id/photo_page_fragment" />
+        <argument
+            android:name="photoPageUri"
+            app:argType="android.net.Uri" />
+    </fragment>
+    <fragment
+        android:id="@+id/photo_page_fragment"
+        android:name="edu.vt.cs5254.fancygallery.PhotoPageFragment"
+        android:label="PhotoPageFragment" >
+        <argument
+            android:name="photoPageUri"
+            app:argType="android.net.Uri" />
+    </fragment>
+</navigation>

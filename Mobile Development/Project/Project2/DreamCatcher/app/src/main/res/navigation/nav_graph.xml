@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dreamListFragment">
+
+    <fragment
+        android:id="@+id/dreamListFragment"
+        android:name="edu.vt.cs5254.dreamcatcher.DreamListFragment"
+        android:label="DreamListFragment"
+        tools:layout="@layout/fragment_dream_list">
+        <action
+            android:id="@+id/show_dream_detail"
+            app:destination="@id/dreamDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dreamDetailFragment"
+        android:name="edu.vt.cs5254.dreamcatcher.DreamDetailFragment"
+        android:label="DreamDetailFragment"
+        tools:layout="@layout/fragment_dream_detail">
+        <argument
+            android:name="dreamId"
+            app:argType="java.util.UUID" />
+        <action
+            android:id="@+id/add_reflection"
+            app:destination="@id/reflectionDialogFragment" />
+        <action
+            android:id="@+id/show_photo_detail"
+            app:destination="@id/photoDialogFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/reflectionDialogFragment"
+        android:name="edu.vt.cs5254.dreamcatcher.ReflectionDialogFragment"
+        android:label="ReflectionDialogFragment"
+        tools:layout="@layout/fragment_reflection_dialog"/>
+    <dialog
+        android:id="@+id/photoDialogFragment"
+        android:name="edu.vt.cs5254.dreamcatcher.PhotoDialogFragment"
+        android:label="PhotoDialogFragment" >
+        <argument
+            android:name="dream_photo_filename"
+            app:argType="string" />
+    </dialog>
+</navigation>
