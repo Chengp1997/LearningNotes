@@ -35,19 +35,19 @@ Activity and fragment are used in this app. One activity will hold multiple frag
 
 DreamCatcherList.png
 
-<img src="/Users/chengeping/Documents/LearningMaterial/LearningNotes/Mobile Development/Project/Project2/IMG/DreamCatcherList.png" alt="image-20230103175447292" style="zoom:50%;" />
+<img src="IMG/DreamCatcherList.png" alt="image-20230103175447292" style="zoom:50%;" />
 
 DreamCatcherDetail
 
-<img src="/Users/chengeping/Documents/LearningMaterial/LearningNotes/Mobile Development/Project/Project2/IMG/DreamCatcherDetail.png" alt="image-20230103175609172" style="zoom:50%;" />
+<img src="IMG/DreamCatcherDetail.png" alt="image-20230103175609172" style="zoom:50%;" />
 
 Share Detail Dream
 
-<img src="/Users/chengeping/Documents/LearningMaterial/LearningNotes/Mobile Development/Project/Project2/IMG/DreamCatcherShare.png" alt="image-20230103175650374" style="zoom:50%;" />
+<img src="IMG/DreamCatcherShare.png" alt="image-20230103175650374" style="zoom:50%;" />
 
 Taking Photos
 
-<img src="/Users/chengeping/Documents/LearningMaterial/LearningNotes/Mobile Development/Project/Project2/IMG/DreamCatcherPhotos.png" alt="image-20230103175742975" style="zoom:50%;" />
+<img src="IMG/DreamCatcherPhotos.png" alt="image-20230103175742975" style="zoom:50%;" />
 
 
 

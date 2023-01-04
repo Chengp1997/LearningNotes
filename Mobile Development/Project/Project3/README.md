@@ -29,12 +29,12 @@ App using api to get photos from the internet.
 
 GalleryFragment
 
-<img src="/Users/chengeping/Documents/LearningMaterial/LearningNotes/Mobile Development/Project/Project3/IMG/GalleryFragment.png" alt="image-20230103194105402" style="zoom:50%;" />
+<img src="IMG/GalleryFragment.png" alt="image-20230103194105402" style="zoom:50%;" />
 
 MapFragment
 
-<img src="/Users/chengeping/Documents/LearningMaterial/LearningNotes/Mobile Development/Project/Project3/IMG/MapFragment.png" alt="image-20230103194257676" style="zoom:50%;" />
+<img src="IMG/MapFragment.png" alt="image-20230103194257676" style="zoom:50%;" />
 
 PhotoGallery
 
-<img src="/Users/chengeping/Documents/LearningMaterial/LearningNotes/Mobile Development/Project/Project3/IMG/PhotoPageFragment.png" alt="image-20230103194712328" style="zoom:50%;" />
+<img src="IMG/PhotoPageFragment.png" alt="image-20230103194712328" style="zoom:50%;" />

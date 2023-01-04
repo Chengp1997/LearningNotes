@@ -23,9 +23,9 @@ Use **activity** to hold the view and the activity of the app.
 
 ## Layouts
 
-<img src="/Users/chengeping/Documents/LearningMaterial/LearningNotes/Mobile Development/Project/Project1/IMG/Layout1.png" alt="image-20230102170331709" style="zoom:50%;" />
+<img src="IMG/Layout1.png" alt="image-20230102170331709" style="zoom:50%;" />
 
-<img src="/Users/chengeping/Documents/LearningMaterial/LearningNotes/Mobile Development/Project/Project1/IMG/Layout2.png" alt="image-20230102170247988" style="zoom:50%;" />
+<img src="IMG/Layout2.png" alt="image-20230102170247988" style="zoom:50%;" />
 
 
 
