@@ -1,0 +1,111 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Customer</title>
+<script type="text/javascript"  src="jquery-1.4.4.min.js"></script>
+<script type = "text/javascript">
+	var username = '${sessionScope.username}'
+	var id = '${sessionScope.id}'
+	
+	var target = "ws://localhost:8080/Serve/chatSocket?username="+username+"&id="+id;
+  	var ws = new WebSocket(target);
+  	
+  	var server;
+	
+  	ws.onmessage = function(message)
+    {  		
+		eval("var msg = "+ message.data+";");		
+		server = msg.servername;	
+		
+		if(undefined!=msg.message)
+			$("#show").append(msg.message + "<br/>");	
+    }
+  	
+  	
+  	function sendmsg(){
+  		var obj = {
+  				to:server,
+  				from:username,
+  				msg:$("#writing").val()
+  			}
+  			
+  			var str = JSON.stringify(obj);
+  			ws.send(str);
+  			$("#writing").val("");
+  	}
+  	
+  	
+
+
+</script>
+<style type = "text/css">
+	.w{
+		
+		background = rgb(111,212,109);
+		width = 600px;
+	}
+
+	.b{
+		width = 150px;
+		height = 30px;
+		background = rgb(69,112,69);
+		color = white;
+
+	}
+
+
+</style>
+</head>
+<body>
+
+
+
+	<div align = "center">
+		<img src = "headc.jpg" width = "800">
+	</div>
+
+
+
+	<div class = "w" align = "center">
+		<textarea id = "show" style="width: 800px; height: 291px; resize:none"></textarea>
+	</div>
+
+
+
+
+
+	<div align = "center" class = "w" style = "margin:30px">
+		write your message here:
+	</div>
+
+
+
+
+	<div align = "center" class = "w" >
+		<input type = "text" id = "writing" style="width: 800px; height: 86px"/> <br>
+	</div>
+
+
+
+
+
+
+	<div align = "center" class = "w" style = "margin-top:20px">
+		<input class = "b" type = "button" value = "OK, Send it" style = "width:150px;height : 30px;background :rgb(69,112,69);color : white;" onclick = "sendmsg()"/>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input class = "b" type = "button" value = "Clear the text window" style = "width:150px;height : 30px;background :rgb(69,112,69);color : white;" />
+	</div>
+
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+
+
+	
+</body>
+</html>

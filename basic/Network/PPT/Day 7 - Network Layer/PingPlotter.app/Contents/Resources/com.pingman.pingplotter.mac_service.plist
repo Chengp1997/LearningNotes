@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Disabled</key>
+	<false/>
+	<key>KeepAlive</key>
+	<true/>
+	<key>Label</key>
+	<string>com.pingman.pingplotter.mac</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/Applications/PingPlotter.app/Contents/MacOS/PingPlotter</string>
+		<string>--service</string>
+	</array>
+	<key>WorkingDirectory</key>
+	<string>/Applications/PingPlotter.app/Contents/Resources</string>
+	<key>StandardOutPath</key>
+	<string>/Library/Logs/PingPlotter/stdout.log</string>
+	<key>StandardErrorPath</key>
+	<string>/Library/Logs/PingPlotter/stderr.log</string>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>ProcessType</key>
+	<string>Interactive</string>
+	<key>UserName</key>
+	<string>root</string>
+</dict>
+</plist>

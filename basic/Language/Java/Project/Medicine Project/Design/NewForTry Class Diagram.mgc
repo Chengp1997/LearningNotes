@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassDiagram>
+    <Class name="application.model.MedicineChange" x="845" y="768">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="application.model.Medicine"/>
+    </Class>
+    <Class name="application.view.MainMenuController" x="764" y="158">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="application.Main"
+            endpointName="mainApp" kind="Simple"/>
+    </Class>
+    <Class name="application.model.Disease" x="4" y="59">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="application.model.MedicineProjectChange" x="1145" y="792">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="application.model.MedicineProject"/>
+    </Class>
+    <Class name="application.view.WarningController" x="1140" y="1342">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="application.view.NewMedicineController" x="1488" y="-6">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="application.model.Medicine"
+            endpointName="medicine" kind="Simple"/>
+        <Association destinationClassName="application.model.Medicine"
+            endpointName="med" kind="Simple"/>
+        <Association destinationClassName="application.Main"
+            endpointName="mainApp" kind="Simple"/>
+        <Communication destinationClassName="application.Data"/>
+        <Communication destinationClassName="application.model.Medicine"/>
+    </Class>
+    <Class name="application.view.WelcomeController" x="1158" y="-28">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="application.Main"
+            endpointName="mainApp" kind="Simple"/>
+    </Class>
+    <Class name="application.model.WorkChange" x="955" y="240">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="application.model.Work"/>
+    </Class>
+    <Class name="application.model.Medicine" x="2228" y="-60">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="application.view.NewMedicineProjectController" x="2742" y="1448">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="application.model.MedicineProject"
+            endpointName="medicineproject" kind="Simple"/>
+        <Association
+            destinationClassName="application.model.MedicineProject"
+            endpointName="med" kind="Simple"/>
+        <Communication destinationClassName="application.model.MedicineProject"/>
+        <Communication destinationClassName="application.Data"/>
+    </Class>
+    <Class name="application.model.Work" x="1877" y="1279">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="application.view.BasicInformationController" x="494" y="843">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="application.Data"
+            endpointName="p" kind="Simple"/>
+        <Association destinationClassName="application.Data"
+            endpointName="m" kind="Simple"/>
+        <Communication destinationClassName="application.Data"/>
+    </Class>
+    <Class name="application.view.NewPersonController" x="2760" y="272">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="application.model.Person"
+            endpointName="person" kind="Simple"/>
+        <Association destinationClassName="application.model.Person"
+            endpointName="med" kind="Simple"/>
+        <Communication destinationClassName="application.model.Person"/>
+        <Communication destinationClassName="application.Data"/>
+    </Class>
+    <Class name="application.view.ClaimCenterController" x="1205" y="329">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="application.Data"
+            endpointName="p" kind="Simple"/>
+        <Communication destinationClassName="application.Data"/>
+    </Class>
+    <Class name="application.view.NewServicesController" x="1466" y="720">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="application.model.Services"
+            endpointName="services" kind="Simple"/>
+        <Association destinationClassName="application.model.Services"
+            endpointName="med" kind="Simple"/>
+        <Communication destinationClassName="application.model.Services"/>
+        <Communication destinationClassName="application.Data"/>
+    </Class>
+    <Class name="application.model.MedicineProject" x="2229" y="993">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="application.model.Services" x="1427" y="1215">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="application.Data" x="512" y="255">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="application.model.PersonChange"
+            endpointName="pData" kind="Simple"/>
+        <Association
+            destinationClassName="application.model.MedicineChange"
+            endpointName="mData" kind="Simple"/>
+        <Association
+            destinationClassName="application.model.MedicineProjectChange"
+            endpointName="mpData" kind="Simple"/>
+        <Association
+            destinationClassName="application.model.ServicesChange"
+            endpointName="sData" kind="Simple"/>
+        <Association destinationClassName="application.model.WorkChange"
+            endpointName="wData" kind="Simple"/>
+        <Association
+            destinationClassName="application.model.DiseaseChange"
+            endpointName="dData" kind="Simple"/>
+        <Communication destinationClassName="application.model.MedicineProjectChange"/>
+        <Communication destinationClassName="application.model.MedicineChange"/>
+        <Communication destinationClassName="application.model.WorkChange"/>
+        <Communication destinationClassName="application.model.ServicesChange"/>
+        <Communication destinationClassName="application.model.PersonChange"/>
+        <Communication destinationClassName="application.model.DiseaseChange"/>
+    </Class>
+    <Class name="application.model.ServicesChange" x="261" y="214">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="application.model.Services"/>
+    </Class>
+    <Class name="application.model.PersonChange" x="39" y="342">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="application.model.Person"/>
+    </Class>
+    <Class name="application.view.NewWorkController" x="1848" y="692">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="application.model.Work"
+            endpointName="work" kind="Simple"/>
+        <Association destinationClassName="application.model.Work"
+            endpointName="med" kind="Simple"/>
+        <Communication destinationClassName="application.Data"/>
+        <Communication destinationClassName="application.model.Work"/>
+    </Class>
+    <Class name="application.view.MedicalInformationController" x="50" y="668">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="application.Data"
+            endpointName="p" kind="Simple"/>
+        <Association destinationClassName="application.Data"
+            endpointName="mp" kind="Simple"/>
+        <Association destinationClassName="application.Data"
+            endpointName="s" kind="Simple"/>
+        <Association destinationClassName="application.Data"
+            endpointName="d" kind="Simple"/>
+        <Communication destinationClassName="application.Data"/>
+    </Class>
+    <Class name="application.Main" x="763" y="19">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="application.model.Person" x="2676" y="794">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="application.view.NewDiseaseController" x="364" y="-7">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="application.model.Disease"
+            endpointName="disease" kind="Simple"/>
+        <Association destinationClassName="application.model.Disease"
+            endpointName="med" kind="Simple"/>
+        <Association destinationClassName="application.Main"
+            endpointName="mainApp" kind="Simple"/>
+        <Communication destinationClassName="application.model.Disease"/>
+        <Communication destinationClassName="application.Data"/>
+    </Class>
+    <Class name="application.view.NotFoundController" x="1150" y="1182">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="application.model.DiseaseChange" x="250" y="474">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="application.model.Disease"/>
+    </Class>
+</ClassDiagram>

@@ -1,0 +1,298 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>东北大学图书馆</title>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<link href="http://202.118.8.2/templets/default/css/nounl.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script type=text/javascript>
+	function setTab03Syn ( i )
+	{
+		selectTab03Syn(i);
+	}
+	
+	function selectTab03Syn ( i )
+	{
+		switch(i){
+			case 1:
+			document.getElementById("TabTab03Con1").style.display="block";
+			document.getElementById("TabTab03Con2").style.display="none";
+			document.getElementById("TabTab03Con3").style.display="none";
+			break;
+			case 2:
+			document.getElementById("TabTab03Con1").style.display="none";
+			document.getElementById("TabTab03Con2").style.display="block";
+			document.getElementById("TabTab03Con3").style.display="none";
+			break;
+			case 3:
+			document.getElementById("TabTab03Con1").style.display="none";
+			document.getElementById("TabTab03Con2").style.display="none";
+			document.getElementById("TabTab03Con3").style.display="block";
+			break;
+		}
+	}
+function SearchPrimo()
+
+	{
+		var keywords= document.getElementById("textprimo").value;
+		var formID= document.getElementById("primo");
+		if(document.getElementById("chradit").checked){
+		     actionURL = "http://ss.zhizhen.com/s.do?go=p&sw="+keywords;
+		}else{
+			 actionURL = "http://metaplus.cceu.org.cn:1701/primo_library/libweb/action/dlSearch.do?institution=NEU&vid=86neu&search_scope=default_scope&onCampus=false&group=GUEST&query=any,exact,"+keywords;
+		}
+	//	var actionURL="http://d.gxu.edu.cn/primo_library/libweb/action/search.do?institution=GXU&dscnt=2&scp.scps=primo_central_multiple_fe&tab=primo_central&srt=rank&mode=Basic&indx=1&fromLogin=true&fn=search&vid=gxu&vl(freeText0)="+keywords;
+		actionURL=encodeURI(actionURL);
+		window.open(actionURL,"_blank");
+
+	}
+</script>
+<style>
+.show{display:block;}
+.hide{display:none;}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){ 
+ 
+　　$("#enradit").change(function(){ 
+　　　　$("#sm").html('说明：对本馆可用中外电子资源进行整合检索...');　 
+		$("#val").html('<input id="textprimo" type="text" name="textprimo" class="shuruk_x" /> ');
+　　});
+　　$("#chradit").change(function(){ 
+　　　　$("#sm").html('说明：对本馆可用中文电子资源进行整合检索...');　 
+		$("#val").html('<input type="text" name="sw" class="shuruk_x" id="textprimo" /><input name = "go" value = "q" type = "hidden"  >');
+　　});
+});
+</script>
+</head>
+
+<body>
+<div class="dome_wc">
+<div class="nuvl_top  xinjiagif">
+<embed src="http://202.118.8.2/templets/default/images/index.swf" width="396" height="120"></embed>
+</div>
+
+<div class="nav_dh"><ul><li><a href="/">首 页</a></li><li><a href="/page/gy/gk">关于本馆</a></li>
+<li><a href="/page/ml">馆藏书刊检索</a></li>
+<li><a href="http://sfx4hosting.cceu.org.cn:3410/neuej/ej.htm">电子期刊检索</a></li>
+<li><a href="http://202.118.8.19/V/S3NS6R39RJJXGRH4GNDHA2FKFRBTV3R4EV358RI4FMHPBV5NRS-09637?&pds_handle=GUEST">数据库检索</a></li>
+<li><a href="http://www.yidu.edu.cn/">e读</a></li>
+<li><a href="http://202.118.8.4:8080/opac_two/reader/infoList.jsp">我的图书馆</a></li>
+<li><a href="http://202.118.8.4/english/english.htm">English Version</a></li>
+</ul>
+<!--
+<div class="nav_rh"><a href="http://202.118.8.4/english/english.htm">English</a></div>
+<div class="nav_rh"><a href="#"><img src="http://202.118.8.2/templets/default/images/russ_03.png" /></a></div>
+-->
+</div>
+<div class="nrou_lf">
+<div class="serch_sy"><p id="sm">说明：对本馆可用中外文电子资源进行整合检索...</p>
+
+<div class="serch_dv">
+<!--   
+   <FORM id="primo" name="primo" action="" method="post" onkeypress="if(window.event.keyCode==13){SearchPrimo(); }" onSubmit="SearchPrimo(); return false;" >
+    <input id=chradit" name="radio" type="radio">中文 &nbsp;&nbsp; <input id=enradit" name="radio" type="radio">英文
+	<input id="textprimo" type="text" name="textprimo"  />
+	<a href="#" onclick="SearchPrimo();" id="go_primo"><img src="http://202.118.8.2/templets/default/images/serch.png" /></a>
+	</form>
+	-->
+	<FORM id="primo" onSubmit="SearchPrimo(); return false;" onkeypress="if(window.event.keyCode==13){SearchPrimo(); }" method="post" name="primo" action="">
+     <span id="val">
+	 <input id="textprimo" type="text" name="textprimo" class="shuruk_x" /> 
+	 </span> 
+    <a href="#" onclick="SearchPrimo();" id="go_primo" >
+	<img src="http://202.118.8.2/templets/default/images/serch.png" /></a><br />
+	<INPUT class="beixun" id="chradit" name="chradit" type="radio"  value="ch">中文 &nbsp;&nbsp; 
+    <INPUT class="beixun_e"  id="enradit" name="chradit" type="radio" checked value="en">外文
+</FORM>
+</div>
+
+</div>
+<div class="nav_zydh">
+<ul class="nav_zygx">
+<p class="nav_zyt"><a href="/page/zy/">资源导航</a></p>
+<li><a href="http://202.118.8.19/V/Q9LML43LJSTBR174I4M65TJXMPQACCYISLTNTDTP9YTEGFQC6Y-09653?&pds_handle=GUEST">数据库导航</a></li>
+<li><a href="http://sfx4hosting.cceu.org.cn:3410/neuej/ej.htm">电子期刊检索</a></li>
+<li><a href="/page/zy/dzts/">电子图书</a></li>
+<li><a href="/page/zy/zlbz">专利标准</a></li>
+<li><a href="/page/zy/hylw">会议论文</a></li>
+<li><a href="/page/zy/xwlw">学位论文</a></li>
+<li><a href="/page/tplj/tsgc">特色馆藏</a></li> 
+<li><a href="/page/zy/wlxs/">网络学术资源</a></li>
+<li><a href="/page/zy/bqgg/">版权公告</a></li> 
+<!--<li><a href="http://202.118.8.19/V/Q9LML43LJSTBR174I4M65TJXMPQACCYISLTNTDTP9YTEGFQC6Y-09653?&pds_handle=GUEST">信息资源门户</a></li>-->
+<!--<p class="nav_my"><a href="/page/zy/">» MORE</a></p>-->
+</ul>
+<ul class="nav_zygx"><p class="nav_zyt"><a href="/page/fw/">服务推荐</a></p>
+<li><a href="/page/tplj/kjcx">科技查新</a></li>
+<li><a href="/page/tplj/wxcd">文献传递</a></li>
+<li><a href="/page/fw/lhml">联合目录</a></li>
+<li><a href="http://www.cceu.org.cn/demo/findcoreej.htm">核心刊查询</a></li>
+<li><a href="/page/tplj/lwtj">本校学位论文检索</a></li>
+<li><a href="/page/fw/ssgp">随书光盘</a></li>
+<li><a href="/page/fw/wxjs">文献检索课</a></li> 
+<li><a href="/page/fw/xkfw">学科服务</a></li>
+<li><a href="/page/fw/qtfwsq">其他服务申请</a></li>
+</ul>
+<ul class="nav_zygx nav_zygw">
+<p class="nav_zyt"><a  href="/page/jygz/">读者园地</a></p>
+<li><a href="/page/jygz/zn">图书馆使用指南</a></li> 
+<li><a href="/page/jygz/xsrg">新生入馆指南</a></li>
+<li><a href="/page/jygz/sxbl">离校手续办理</a></li>
+<li><a href="http://202.118.8.4:8080/opac_two/newbook/queryIn.jsp">新书通报</a></li>
+<li><a href="http://202.118.8.4:8080/opac_two/recommbuy/catalogList.jsp">资源荐购</a></li>
+<li><a href="/page/jygz/wxjz">文献捐赠</a></li>
+<li><a href="/page/jygz/dc">读者调查</a></li>
+<li><a href="/page/jygz/fwss">服务设施</a></li>
+<li><a href="/page/jygz/zzfw">自助服务</a></li>
+</ul>
+</div>
+<div class="nav_xqlm">
+	<a href="#">校庆专栏</a>
+	<a href="http://202.118.8.4/cankao/index.htm">大学生素质导读书目</a>
+	<a href="/page/tplj/fgjs">学科分馆</a>
+	<a href="/page/tplj/dzytsg">图书馆与读者</a>
+	<a href="/page/xiazai/">下载专区</a>
+	<a href="http://www.lib.neu.edu.cn/">旧版主页</a>
+</div>
+</div>
+<div class="nav_rhg">
+<div class="nav_news">
+	<div class="nav_ntab" id="bg">
+		<a href="/page/ggxx/tsg" id="font1" class="tab1" onMouseOver="setTab03Syn(1);document.getElementById('bg').className='nav_ntab'">公告信息</a>
+		<a href="/page/zydt/dt" id="font2" class="tab2" onMouseOver="setTab03Syn(2);document.getElementById('bg').className='nav_ntab2'">资源动态</a>
+		<a href="/page/xscg/cg" id="font3" class="tab3" onMouseOver="setTab03Syn(3);document.getElementById('bg').className='nav_ntab3'">学术成果</a>
+		<div class="more_n">
+		<a href="/page/ggxx/tsg">
+		<img src="http://202.118.8.2/templets/default/images/more.png" /></a>
+		</div>
+	</div>
+ <ul class="nav_new" id="TabTab03Con1">
+    <li><a href="/page/ggxx/jzxx/2013/0709/32.html">CNKI新功能讲座</a></li>
+<li><a href="/page/ggxx/tsg/2013/0709/29.html">图书馆办理离校手续温馨提示</a></li>
+<li><a href="/page/ggxx/tsg/2013/0705/25.html">图书馆自助文印系统开通通知</a></li>
+<li><a href="/page/ggxx/tsg/2013/0705/24.html">关于开放古籍图书阅览室的通知</a></li>
+
+</ul>
+ <ul class="nav_new" id="TabTab03Con2" style="display:none">
+    <li><a href="/page/zydt/dt/2013/0709/31.html">Springer Materials开通试用</a></li>
+<li><a href="/page/zydt/dt/2013/0709/30.html">Springer Materials开通试用</a></li>
+<li><a href="/page/zydt/dt/2013/0705/27.html">NoteExpress文献管理软件试用</a></li>
+<li><a href="/page/zydt/dt/2013/0705/26.html">试用RESSET（锐思）数据</a></li>
+
+</ul>
+ <ul class="nav_new" id="TabTab03Con3" style="display:none">
+    <table width="330" height="113" border="0" cellspacing="0"  >
+  <tr>
+    <td width="7" height="113"></td>
+    <td width="310">
+<table width="323" height="110" border="0" cellspacing="0" align="left" >
+        <style type="text/css">     	
+						   .rss-items{ 
+						   padding-left:0px; 
+						   margin:0px; 
+						   font-size:12px;
+						   font-family: Arial;
+						   }
+						   div.scrolling_bar a:link{
+						   text-decoration:underline;
+						   color:#000099;
+						   font-size:11px;
+						   font-family: Arial;
+						   }
+						   div.scrolling_bar a:visited{
+						   text-decoration:underline;
+						   color:#000099;
+						   font-size:12px;
+						   font-family: Arial;
+						   }
+						</style>
+        <tr> 
+          <td> <div class="scrolling_bar"> 
+              <marquee id=news onmouseover=news.stop() onmouseout=news.start() scrollamount=1 scrolldelay=1 direction=up width=323 height=100>
+              <script language="JavaScript" src="http://php.thomsonreuters.com/feed/feeds.php?src=http%3A%2F%2Frss.isiknowledge.com%2Frss%3Fe%3D23ca43d899ed609c%26c%3D10f4bd80834fd632964c2a34f38ec891&amp;chan=y&amp;desc=1&amp;targ=y" type="text/javascript"></script>
+              </marquee>
+            </div></td>
+        </tr>
+        <tr> 
+          <td width="310" height="10"> 
+            <div class="scrolling_bar" align="left" style= "width:200px;float:left; margin=0;padding-top:4px; "> 
+              <font color="#000099">信息来源:</font> 引文数据库<a href="http://www.isiwebofknowledge.com/">Web 
+              of Science</a> 
+ <br />
+            </div></td>
+        </tr>
+      </table>
+</td>
+  </tr>
+</table> 
+
+
+</ul>
+</div>
+<div class="nav_gni">
+<div class="nav_icn"><a href="/page/tplj/kjcx"><img src="http://202.118.8.2/templets/default/images/icon_01.png" />科技查新</a></div>
+<div class="nav_ico"><a href="/page/tplj/lwtj"><img src="http://202.118.8.2/templets/default/images/icon_02.png" />学位论文提交</a></div>
+<div class="nav_icn"><a href="/page/tplj/zxt"><img src="http://202.118.8.2/templets/default/images/icon_03.png" />咨询台</a></div>
+<div class="nav_icn"><a href="/page/tplj/jzpx"><img src="http://202.118.8.2/templets/default/images/icon_04.png" />讲座培训</a></div>
+<div class="nav_ico"><a href="/page/tplj/wxcd"><img src="http://202.118.8.2/templets/default/images/icon_05.png" />文献传递</a></div>
+<div class="nav_icn"><a href="/page/tplj/faq"><img src="http://202.118.8.2/templets/default/images/icon_06.png" /> FAQ</a></div>
+</div>
+<div class="nav_nqh">
+<script language='javascript'>
+linkarr = new Array();
+picarr = new Array();
+textarr = new Array();
+var swf_width=334;
+var swf_height=180;
+var files = "";
+var links = "";
+var texts = "";
+//这里设置调用标记
+//linkarr[1] = "/page/hdp/2013/0705/28.html";
+picarr[1]  = "/uploads/130402/130705/11-130F51Q9255A.jpg";
+textarr[1] = "读者在利用图书馆资源";
+//linkarr[2] = "/page/hdp/2013/0324/4.html";
+picarr[2]  = "/uploads/130402/1-1304021K401R3.png";
+textarr[2] = "读者利用图书馆";
+//linkarr[3] = "/page/hdp/2013/0324/3.html";
+picarr[3]  = "/uploads/130709/11-130F9113341154.jpg";
+textarr[3] = "2011年东北大学校领导来馆";
+
+for(i=1;i<picarr.length;i++){
+  if(files=="") files = picarr[i];
+  else files += "|"+picarr[i];
+}
+for(i=1;i<textarr.length;i++){
+  if(texts=="") texts = textarr[i];
+  else texts += "|"+textarr[i];
+}
+document.write('<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="'+ swf_width +'" height="'+ swf_height +'">');
+document.write('<param name="movie" value="/templets/images/bcastr3.swf"><param name="quality" value="high">');
+document.write('<param name="menu" value="false"><param name=wmode value="opaque">');
+document.write('<param name="FlashVars" value="bcastr_file='+files+'&bcastr_link='+links+'&bcastr_title='+texts+'">');
+document.write('<embed src="/templets/images/bcastr3.swf" wmode="opaque" FlashVars="bcastr_file='+files+'&bcastr_link='+links+'&bcastr_title='+texts+'& menu="false" quality="high" width="'+ swf_width +'" height="'+ swf_height +'" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />'); document.write('</object>'); 
+</script>
+</div>
+</div>
+<div class="nav_bh">
+<a href="http://www.neu.edu.cn/">东北大学</a>▕ 
+<a href="http://www.calis.edu.cn/">CALIS</a>▕ 
+<a href="http://www.cashl.edu.cn/portal/index.jsp">CASHL</a>▕ 
+<a href="http://www.nstl.gov.cn/">NSTL</a>▕ 
+<a href="http://www.lsc.org.cn/CN/index.html">中国图书馆学会</a>▕ 
+<a href="/page/tplj/gntsg/gndx">国内外图书馆</a>▕ 
+<a href="http://lib.neuq.edu.cn/index.html">东北大学秦皇岛分校图书馆</a>▕ 
+<a href="http://www.lib-b.neu.edu.cn/">东北大学图书馆基础分部</a> 
+</div>
+<div class="nav_bqbg">版权所有©东北大学图书馆  <br />
+本馆地址：辽宁省沈阳市和平区文化路3号巷11号 邮编110819 联系电话024－83687576</div>
+</div>
+<div align="center" style="clear:both"><font color="#666666"><strong>本年度访问计数：</strong></font>
+<script src="http://count.2881.com/count/count.asp?id=27727&sx=1&ys=52" language="JavaScript" charset="gb2312"></script>
+</div>
+
+</body>
+</html>

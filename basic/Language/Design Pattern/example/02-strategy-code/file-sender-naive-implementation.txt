@@ -1,0 +1,33 @@
+enum CompressionType {
+  AUDIO, IMAGE, REGULAR
+}
+
+public class Sender {
+  private CompressionType ct;
+  public setCompressionType(CompressionType ct) {
+    this.ct = ct;
+  }
+  public void sendFile(File f) {
+    CompressedFile cf = compress(f);
+    send(cf);
+  }
+  protected send(CompressedFile cf) {
+   //...
+  }
+  protected compress(File f) {
+    if (ct == CompressionType.AUDIO) {
+      // audio compression
+    }
+    else if (ct == CompressionType.IMAGE) {
+      // image compression
+    }
+    else {
+      // regular compression
+    }
+  }
+}
+
+main:
+Sender s = new Sender();
+s.setCompressionType(CompressionType.AUDIO);
+s.sendFile(audioFile);

@@ -1,0 +1,196 @@
+{
+  "Root": {
+    "Trait": [
+      {
+        "Type": "Checkbox",
+        "Setting": "ServerSettings.WebServerSettings.ServerEnabled",
+        "Label": "Enable built-in web server.",
+        "Hint": "This enables / disables the built-in web server.  See the help file for more details."
+      },
+      {
+        "Type": "TextBox",
+        "Setting": "ServerSettings.WebServerSettings.Port",
+        "Label": "Server Port:",
+        "Attributes": { "MaxChars": 5 }
+      },
+      {
+        "Type": "Checkbox",
+        "Setting": "ServerSettings.WebServerSettings.Authenticate",
+        "Label": "Use Security (basic authentication)",
+        "Hint": "Do you want to require a username and password to access the web interface?"
+      },
+      {
+        "Type": "TextBox",
+        "Setting": "ServerSettings.WebServerSettings.Username",
+        "Label": "Username:",
+        "Attributes": {
+          "MaxChars": 20
+        }
+      },
+      {
+        "Type": "Password",
+        "Setting": "ServerSettings.WebServerSettings.Password",
+        "Label": "Password:",
+        "Attributes": {
+          "MaxChars": 20
+        }
+      },
+      {
+        "Type": "RadioGroup",
+        "Name": "AutoSaveSettings",
+        "Label": "Automatically keep collected data:",
+        "Attributes": {
+          "Items": [
+            {
+              "Text": "Always",
+              "Hint": "Automatically configure new sessions to save as soon as they are created.",
+              "ID": "radioAlwaysPersist"
+            },
+            {
+              "Text": "After:",
+              "Hint": "Initially create as temporary, but convert to persistent after this amount of time.",
+              "EditorTrait": "ServerSettings.AdHocSettings.StartNewSessionsAdHocMode_Edited",
+              "ID": "radioPersistAfterTime"
+            },
+            {
+              "Text": "Only when selected",
+              "Hint": "Right-click on a target tab to switch between Keep and Discard mode.",
+              "ID": "radioManuallyPersist"
+            }
+          ]
+        }
+      },
+      {
+        "Name": "ServerSettings.AdHocSettings.StartNewSessionsAdHocMode_Edited",
+        "Setting": "",
+        "Hint": "Initially create as temporary, but convert to persistent after this amount of time.",
+        "Type": "Textbox",
+        "Attributes": {
+          "MaxChars": 17,
+          "ID": "editPersistTimeThresholdMinutes"
+        }
+      },
+      {
+        "Type": "Combobox",
+        "Setting": "ServerSettings.CurrentConfig.ServerConfiguration.Engine.PingTypeID",
+        "Label": "Packet Type",
+        "Name": "PacketTypeCB",
+        "Hint": "Pick your packet type to control the outbound packet types. For details about each type, see the PingPlotter manual on the web.",
+        "Attributes": {
+          "Items": [ ]
+        }
+      },
+      {
+        "Type": "TextBox",
+        "Reference": "",
+        "Setting": "ServerSettings.CurrentConfig.ServerConfiguration.Engine.Timeout",
+        "Label": "Time to Wait for ping replies",
+        "Hint": "The amount of time given a packet to return.  If not returned in this time, it's considered \"lost\".  The default value for this is 3000ms (3 seconds)",
+        "Validation": "Integer",
+        "Attributes": {
+          "DisplayFormat": "MS",
+          "Postfix": "ms",
+          "MaxChars": 5
+        }
+      },
+      {
+        "Type": "ComboboxEdit",
+        "Reference": "",
+        "Setting": "ServerSettings.CurrentConfig.ServerConfiguration.Engine.InterHopDelay",
+        "Label": "Packet send delay",
+        "Hint": "The amount of time to wait between sending out each packet in a trace. This should be smaller for fast internet connections and bigger for slow ones. \r\n40 or higher works well (25 packets per second) on most connections.  Going too low can show artificial latency problems.",
+        "Validation": "Range(1-100)",
+        "Attributes": {
+          "MaxChars": 7,
+          "DisplayFormat": "MS",
+          "Postfix": "ms",
+          "Items": [
+            {
+              "Value": 0,
+              "Text": "Auto"
+            },
+            1,
+            5,
+            10,
+            20,
+            40,
+            50,
+            100,
+            250
+          ]
+        }
+      },
+      {
+        "Type": "TextBox",
+        "Reference": "",
+        "Setting": "ServerSettings.CurrentConfig.ServerConfiguration.Engine.PacketSize",
+        "Label": "Packet size",
+        "Hint": "The IP size of the packet, including all IP headers. The default for ICMP packets is 56 bytes. For TCP packets, it's 40 bytes.",
+        "Attributes": {
+          "Postfix": "bytes",
+          "MaxChars": 5
+        }
+      },
+      {
+        "Type": "Checkbox",
+        "Reference": "",
+        "Setting": "ServerSettings.CurrentConfig.ServerConfiguration.Engine.AllowPacketFragmentation",
+        "Label": "Allow packet fragmentation?",
+        "Hint": "When checked, large packets (exceeding MTU size) can be split across multiple network packets. \r\nWhen cleared, only packets up to the MTU size will get a response (this can help troubleshoot MTU problems). \r\nThis defaults to *ON*."
+      },
+      {
+        "Type": "RadioButton",
+        "Reference": "",
+        "Setting": "ServerSettings.CurrentConfig.ServerConfiguration.Engine.AdvCargo",
+        "Label": "Default (Packet #+Program Name/Version)",
+        "Hint": "The default option is to fill the packet \"Cargo\" (non-critical packet space) with the packet number, then the Program Name + Version.",
+        "Attributes": {
+          "Value": 0
+        }
+      },
+      {
+        "Type": "TextBox",
+        "Reference": "",
+        "Setting": "ServerSettings.CurrentConfig.ServerConfiguration.Engine.AdvCargoValue",
+        "Label": "",
+        "Hint": "Enter a string value.  Can use these \"escape\" codes: \r\n \\xFF (where FF = a hex value)\r\n \\255 (where 255 is an decimal value from 000 to 255)\r\n \\r or \\n for CR or LF\r\n \\SAMPLENUM for text value of the current sample number (or SAMPLENUM_BIN for 4 byte binary version of same)\r\n \\SEQNUM for TCP/IP sequence number (or SEQNUM_BIN for the 2 byte binary representation of that)\r\n \\HOPNUM for the hop number of that packet, or HOPNUM_BIN for the 1 byte hop number.",
+        "Attributes": { "MaxChars": -1 },
+        "Name": "tbAdvCargoString"
+      },
+      {
+        "Type": "RadioButton",
+        "Reference": "",
+        "Setting": "ServerSettings.CurrentConfig.ServerConfiguration.Engine.AdvCargo",
+        "Label": "String Value",
+        "Hint": "Enter a string value.  Can use these \"escape\" codes: \r\n \\xFF (where FF = a hex value)\r\n \\255 (where 255 is an decimal value from 000 to 255)\r\n \\r or \\n for CR or LF\r\n \\SAMPLENUM for text value of the current sample number (or SAMPLENUM_BIN for 4 byte binary version of same)\r\n \\SEQNUM for TCP/IP sequence number (or SEQNUM_BIN for the 2 byte binary representation of that)\r\n \\HOPNUM for the hop number of that packet, or HOPNUM_BIN for the 1 byte hop number.",
+        "Attributes": {
+          "Value": 1,
+          "RBValueControl": "tbAdvCargoString"
+        }
+      },
+      {
+
+        "Type": "TextBox",
+        "Reference": "",
+        "Setting": "ServerSettings.CurrentConfig.ServerConfiguration.Engine.AdvCargoValue",
+        "Label": "",
+        "Hint": "Binary file used to fill cargo space. If cargo is bigger than file, file will be repeated to fill.",
+        "Attributes": {
+          "MaxChars": -1
+        },
+        "Name": "tbAdvCargoFile"
+      },
+      {
+        "Type": "RadioButton",
+        "Reference": "",
+        "Setting": "ServerSettings.CurrentConfig.ServerConfiguration.Engine.AdvCargo",
+        "Label": "File",
+        "Hint": "Binary file used to fill cargo space. If cargo is bigger than file, file will be repeated to fill.",
+        "Attributes": {
+          "Value": 2,
+          "RBValueControl": "tbAdvCargoFile"
+        }
+      }
+    ]
+  }
+}

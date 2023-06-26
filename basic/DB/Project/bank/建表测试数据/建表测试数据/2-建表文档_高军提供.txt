@@ -1,0 +1,229 @@
+--创建 1-客户信息表(customer)
+CREATE TABLE customer
+(
+    customer_id   NUMBER(9)   NOT NULL PRIMARY KEY,--客户编号 100X
+
+    customer_name VARCHAR2(30) NOT NULL, --客户姓名
+
+    address       VARCHAR2(90) NOT NULL, --地址
+
+    balance       NUMBER(9,2) --账户余额
+);
+
+--创建序列  100X 开头的
+CREATE SEQUENCE customer_seq INCREMENT BY 1 START WITH 1000 MAXVALUE 999999 NOCYCLE NOCACHE;
+
+
+
+--创建 2-设备表(device)  就是家里的电表
+CREATE TABLE device
+(
+    device_id     NUMBER(9)    NOT NULL PRIMARY KEY,--设备编号  200X
+
+    customer_id   NUMBER(9)    NOT NULL, --客户编号
+
+    device_type   VARCHAR2(2)  NOT NULL  --设备类别  01：个人用户 02：企业用户
+);
+
+--创建序列  200X 开头的
+CREATE SEQUENCE device_seq INCREMENT BY 1 START WITH 2000 MAXVALUE 999999 NOCYCLE NOCACHE;
+
+
+
+--创建 3-抄表员表(meter_reader)
+CREATE TABLE meter_reader
+(
+    mr_id   NUMBER(9)    NOT NULL PRIMARY KEY,
+
+    mr_name VARCHAR2(30) NOT NULL
+);
+
+
+
+--创建 4-抄表日志表(meter_log)
+CREATE TABLE meter_log
+(
+    mt_id   NUMBER(9)    NOT NULL PRIMARY KEY,--抄表编号 300X
+
+    mt_date   DATE NOT NULL,--抄表日期
+
+    device_id NUMBER(9) NOT NULL,--设备编号
+
+    customer_id NUMBER(9) NOT NULL,--客户编号
+
+    mt_number NUMBER(9) NOT NULL,--电表数
+
+    mr_id  NUMBER(9) --抄表员编号
+);
+
+--外键约束
+alter table meter_log add constraint meter_log_device_id_fk foreign key (device_id) references device(device_id);
+alter table meter_log add constraint meter_log_customer_id_fk foreign key (customer_id) references customer(customer_id);
+alter table meter_log add constraint meter_log_mr_id_fk foreign key (mr_id) references meter_reader(mr_id);
+--创建联合约束(唯一性)  { device_id   mt_date }组合必须唯一
+CREATE UNIQUE INDEX meter_log_device_id_mt_date ON meter_log(device_id,mt_date);
+--创建序列  300X 开头的
+CREATE SEQUENCE meter_log_seq INCREMENT BY 1 START WITH 3000 MAXVALUE 999999 NOCYCLE NOCACHE;
+
+
+
+--创建 5-电费清单表(power_rate_list)
+CREATE TABLE power_rate_list
+(
+    pr_id          NUMBER(9)    NOT NULL PRIMARY KEY,--电费清单编号 400X
+
+    device_id      NUMBER(9) NOT NULL,--设备编号
+
+    customer_id    NUMBER(9) NOT NULL,--客户编号
+
+    mt_date        DATE NOT NULL,--抄表日期
+
+    begin_number   NUMBER(9),     --起始读数
+
+    end_number     NUMBER(9),     --终止读数
+
+    basic_cost     NUMBER(9,2),     --基本费用
+
+    additional_cost_1  NUMBER(9,2), --附加费用1
+
+    additional_cost_2  NUMBER(9,2), --附加费用2
+
+    paid_fee       NUMBER(9,2), --应缴费用
+
+    actual_fee     NUMBER(9,2), --实缴费用
+
+    late_fee       NUMBER(9,2), --滞纳金
+
+    payable_date   DATE,        --应缴日期
+
+    pay_date       DATE,        --缴费日期
+
+    already_fee    NUMBER(9,2) default 0.00, --已缴费用
+
+    pay_state      VARCHAR2(1)  --缴费状态   (0:未缴  1:已缴  2:部分缴)
+);
+--外键约束
+alter table power_rate_list add constraint power_rate_list_device_id_fk foreign key (device_id) references device(device_id);
+alter table power_rate_list add constraint power_rate_list_customer_id_fk foreign key (customer_id) references customer(customer_id);
+--创建序列  400X 开头的
+CREATE SEQUENCE power_rate_list_seq INCREMENT BY 1 START WITH 4000 MAXVALUE 999999 NOCYCLE NOCACHE;
+--创建联合约束(唯一性)     { device_id   payable_date } 组合必须唯一
+CREATE UNIQUE INDEX power_device_id_payable_date ON power_rate_list(device_id,payable_date);
+
+
+
+--创建 6-银行转账清单表(bank_transfer_record)
+CREATE TABLE bank_transfer_record
+(
+    bt_id     NUMBER(9)  NOT NULL PRIMARY KEY,--银行流水号 500X
+
+    bank_id   VARCHAR2(9) NOT NULL,--银行编号
+
+    customer_id NUMBER(9)  NOT NULL,--客户编号
+
+    transfer_amount NUMBER(9,2) NOT NULL,--转账金额
+
+    transfer_time DATE     NOT NULL  --转账时间
+);
+
+--外键约束
+alter table bank_transfer_record add constraint bank_transfer_customer_id_fk foreign key (customer_id) references customer(customer_id);
+--创建序列 500X 开头的
+CREATE SEQUENCE bank_transfer_record_seq INCREMENT BY 1 START WITH 5000 MAXVALUE 999999 NOCYCLE NOCACHE;
+
+
+
+
+--创建 7-缴费日志表(pay_log)
+CREATE TABLE pay_log
+(
+    pay_id     NUMBER(9)       NOT NULL PRIMARY KEY, --缴费编号 600X
+
+    customer_id   NUMBER(9)    NOT NULL,             --客户编号
+
+    pay_time   DATE            NOT NULL,             --缴费时间
+
+    pay_amount  NUMBER(9,2)    NOT NULL,             --缴费金额
+
+    pay_type   VARCHAR2(2)     NOT NULL,             --缴费类型 01=缴费，02=冲正  03=已冲正
+
+    bank_id    VARCHAR2(9)     NOT NULL,             --银行编号
+
+    bt_id      NUMBER(9)       NOT NULL,             --银行流水号
+
+    notes      VARCHAR2(90)                          --备注  清单编号1 ...
+);
+--外键约束
+alter table pay_log add constraint pay_log_customer_id_fk foreign key (customer_id) references customer(customer_id);
+--创建序列  600X 开头的
+CREATE SEQUENCE pay_log_seq INCREMENT BY 1 START WITH 6000 MAXVALUE 999999 NOCYCLE NOCACHE;
+
+
+--创建 8-银行表(bank)
+CREATE TABLE bank
+(
+    bank_id     VARCHAR2(9)  NOT NULL PRIMARY KEY,--银行编号
+
+    bank_name   VARCHAR2(30)  NOT NULL
+);
+
+
+
+--创建 9-对总账表(account_total)
+CREATE TABLE account_total
+(
+    at_id NUMBER(9)  NOT NULL PRIMARY KEY,--对账流水号
+
+    account_date  DATE     NOT NULL,--日期
+
+    bank_id VARCHAR2(9) NOT NULL,--银行编号
+
+    bank_count  NUMBER(9)  NOT NULL,--银行总笔数
+
+    bank_amount NUMBER(9,2) NOT NULL,--银行总金额
+
+    enterprise_count NUMBER(9)  NOT NULL,--企业方总笔数
+
+    enterprise_amount NUMBER(9,2) NOT NULL,--企业方总金额
+
+    is_success VARCHAR2(2) --是否对账成功 {00:成功 01:失败}
+);
+
+--创建序列
+CREATE SEQUENCE account_total_seq INCREMENT BY 1 START WITH 1 MAXVALUE 999999 NOCYCLE NOCACHE;
+
+
+
+
+--创建 10-对账异常表(account_error_details) 
+CREATE TABLE account_error_details
+(
+    ae_id NUMBER(9)  NOT NULL PRIMARY KEY,--对账流水号 800X
+
+    account_time  DATE     NOT NULL,--对账时间
+
+    bank_id VARCHAR2(9) NOT NULL,--银行编号
+
+    bt_id     NUMBER(9)  NOT NULL,--银行流水号
+
+    customer_id NUMBER(9)  NOT NULL,--客户编号
+
+    bank_amount  NUMBER(9,2) NOT NULL,--银行金额
+
+    enterprise_amount  NUMBER(9,2) NOT NULL,--企业方金额
+
+    account_info  VARCHAR2(30)
+);
+
+--创建序列
+CREATE SEQUENCE account_error_details_seq INCREMENT BY 1 START WITH 1 MAXVALUE 999999 NOCYCLE NOCACHE;
+
+
+
+--创建 11-码表(code_table)
+CREATE TABLE code_table
+(
+    c_key  VARCHAR2(30) NOT NULL PRIMARY KEY,--键(key)
+
+    c_value  VARCHAR2(9) NOT NULL
+);
