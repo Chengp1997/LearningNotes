@@ -1,0 +1,66 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam backgroundColor transparent
+skinparam monochrome true
+hide circle
+set namespaceSeparator .
+
+frame "class Car" {
+abstract class Car {
+-gear: int
+-maxGear: int {static}
+-doorOpen: boolean
+-direction: int
++Car()
++setGear(g: int): boolean
++getGear(): int)
++openRoof(): boolean
++closeRoof(): boolean
++isOpenRoof(): boolean
++openDoor(): void
++closeDoor(): void
++isOpenRoof(): boolean
++steer(degrees: int): void
+}
+
+class BasicCar {
++BasicCar()
+}
+Car <|-- BasicCar
+
+class CabrioletCar {
++CabrioletCar()
++openRoof(): boolean
++closeRoof(): boolean
+}
+Car <|-- CabrioletCar
+
+class SportsCar {
++SportsCar()
++setGear(g: int): boolean
+}
+Car <|-- SportsCar
+
+class PoliceSportsCar {
+-siren:boolean
++PoliceSportsCar()
++setSiren(s: boolean): void
+}
+SportsCar <|--  PoliceSportsCar
+
+class BasicPoliceCar {
+-siren:boolean
++BasicPoliceCar()
++setSiren(s: boolean): void
+}
+BasicCar <|--  BasicPoliceCar
+
+class SpeedLimitCar {
+-speedLimit:int
++SpeedLimitCar()
++setSpeedLimit(s: int): void
+}
+BasicCar <|--  SpeedLimitCar
+
+}
+@enduml

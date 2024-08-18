@@ -1,0 +1,89 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam backgroundColor transparent
+skinparam monochrome true
+hide circle
+set namespaceSeparator .
+
+frame "class Car" {
+abstract class Car {
++Car()
+~readGear(): int {abstract}
+~writeGear(g: int) {abstract}
+~readDoorOpen(): boolean {abstract}
+~writeDoorOpen(do: boolean): void {abstract}
+~readRoofOpen(): boolean {abstract}
+~writeRoofOpen(do: boolean): void {abstract}
++setGear(g: int): boolean {abstract}
++getGear(): int) {abstract}
++openRoof(): boolean {abstract}
++closeRoof(): boolean {abstract}
++isOpenRoof(): boolean {abstract}
++openDoor(): void {abstract}
++closeDoor(): void {abstract}
++isOpenRoof(): boolean {abstract}
++steer(degrees: int): void {abstract}
+}
+
+class BasicCar {
+-gear: int
+-maxGear: int {static}
+-roofOpen: boolean
+-doorOpen: boolean
+-direction: int
++BasicCar()
++setGear(g: int): boolean
++getGear(): int)
++openRoof(): boolean
++closeRoof(): boolean
++isOpenRoof(): boolean
++openDoor(): void
++closeDoor(): void
++isOpenRoof(): boolean
++steer(degrees: int): void
+~readGear(): int
+~writeGear(g: int)
+~readDoorOpen(): boolean
+~writeDoorOpen(do: boolean): void
+~readRoofOpen(): boolean
+~writeRoofOpen(do: boolean): void
+}
+Car <|-- BasicCar
+
+abstract class CarDecorator {
+-gear: int
+-maxGear: int {static}
+-roofOpen: boolean
+-doorOpen: boolean
+-direction: int
++CarDecorator(car: Car)
++setGear(g: int): boolean
++getGear(): int)
++openRoof(): boolean
++closeRoof(): boolean
++isOpenRoof(): boolean
++openDoor(): void
++closeDoor(): void
++isOpenRoof(): boolean
++steer(degrees: int): void
+~readGear(): int
+~writeGear(g: int)
+~readDoorOpen(): boolean
+~writeDoorOpen(do: boolean): void
+~readRoofOpen(): boolean
+~writeRoofOpen(do: boolean): void
+}
+Car <|-- CarDecorator
+Car "1" <--o "1" CarDecorator
+
+class PoliceCar {
+-siren: boolean
+~readSiren(): boolean
+~writeSiren(s: boolean): void
++setSiren(s: boolean): void
++getSiren(): boolean
+}
+CarDecorator <|-- PoliceCar
+
+}
+@enduml

@@ -1,0 +1,45 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam backgroundColor transparent
+skinparam monochrome true
+hide circle
+set namespaceSeparator .
+
+frame "class Car" {
+abstract class Car {
+}
+
+class BasicCar {
++BasicCar()
+}
+Car <|-- BasicCar
+
+abstract class CarDecorator {
++CarDecorator(car: Car)
+}
+Car <|-- CarDecorator
+Car "1" <--o CarDecorator
+
+class PoliceCar {
++PoliceCar(car: Car)
+}
+CarDecorator <|-- PoliceCar
+
+class ConvertibleCar {
++ConvertibleCar(car: Car)
+}
+CarDecorator <|-- ConvertibleCar
+
+class SportsCar {
++SportsCar(car: Car)
+}
+CarDecorator <|-- SportsCar
+
+class SpeedLimitedCar {
++SpeedLimitedCar(car:Car)
+}
+CarDecorator <|-- SpeedLimitedCar
+
+
+}
+@enduml

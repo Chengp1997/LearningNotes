@@ -1,0 +1,16 @@
+class Stock {
+  private List<StockTrader> sts = new LinkedList<Stock>();
+  private List<StockMonitoringApp> sms = new LinkedList<StockMonitoringApp>();
+  private String name;
+  private double price;
+
+  public void setPrice(double p) {
+    price = p;
+    for(StockTrader st:sts) {
+      st.update(name, price);
+    }
+    for(StockMonitoringApp as:sms) {
+      sm.update(name, price);
+    }
+  }
+}

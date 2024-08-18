@@ -1,0 +1,33 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam backgroundColor transparent
+skinparam monochrome true
+hide circle
+set namespaceSeparator .
+
+frame "cd Demo" {
+abstract class cn.neu.AbstractList
+abstract cn.neu.AbstractCollection
+
+interface List
+interface Collection
+
+List <|-- AbstractList
+Collection <|-- AbstractCollection
+
+Collection <|- List
+AbstractCollection <|- AbstractList
+AbstractList <|-- ArrayList
+
+class ArrayList {
+Object[] elementData
+size()
+}
+
+enum TimeUnit {
+DAYS
+HOURS
+MINUTES
+}
+}
+@enduml
