@@ -1,9 +1,0 @@
-# depslib dependency file v1.0
-1526976752 source:d:\codeblocks\timequantum\main.cpp
-	<iostream>
-	<fstream>
-	<queue>
-	"simProcess.h"
-
-1526915900 d:\codeblocks\timequantum\simprocess.h
-
