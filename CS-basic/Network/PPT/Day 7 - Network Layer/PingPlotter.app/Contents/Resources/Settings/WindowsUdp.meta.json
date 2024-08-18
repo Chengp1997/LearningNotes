@@ -1,0 +1,24 @@
+﻿{
+  "Root": {
+    "Trait": [
+      {
+        "Type": "TextBox",
+        "Setting": "ServerSettings.CurrentConfig.ServerConfiguration.Engine.PacketGenSettings.TargetPortStart",
+        "Hint": "Classic Unix-style UDP traceroute. Use this as the starting port.",
+        "Label": "Target Port Range Start:",
+        "Attributes": {
+          "MaxChars": 6
+        }
+      },
+      {
+        "Type": "TextBox",
+        "Setting": "ServerSettings.CurrentConfig.ServerConfiguration.Engine.PacketGenSettings.TargetPortEnd",
+        "Hint": "Classic Unix-style UDP traceroute. Use this as the highest possible port to query.",
+        "Label": "Target Port Range End:",
+        "Attributes": {
+          "MaxChars": 6
+        }
+      }
+    ]
+  }
+}

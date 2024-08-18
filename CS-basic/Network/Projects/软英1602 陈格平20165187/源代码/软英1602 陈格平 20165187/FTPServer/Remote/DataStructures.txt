@@ -1,0 +1,21 @@
+Copyright c 2012, 2007, 1999 Pearson Education, Inc., publishing as Addison-Wesley. All rights reserved.
+Printed in the United States of America. This publication is protected by Copyright, and permission should
+be obtained from the publisher prior to any prohibited reproduction, storage in a retrieval system, or transmission
+in any form or by any means, electronic, mechanical, photocopying, recording, or likewise. To obtain
+permission(s) to use material from this work, please submit a written request to Pearson Education, Inc.,
+Permissions Department, One Lake Street, Upper Saddle River, New Jersey 07458, or you may fax your
+request to 201-236-3290.
+Many of the designations by manufacturers and sellers to distinguish their products are claimed as trademarks.
+Where those designations appear in this book, and the publisher was aware of a trademark claim, the
+designations have been printed in initial caps or all caps.
+Library of Congress Cataloging-in-Publication Data
+Weiss, Mark Allen.
+Data structures and algorithm analysis in Java / Mark Allen Weiss. ¨C 3rd ed.
+p. cm.
+ISBN-13: 978-0-13-257627-7 (alk. paper)
+ISBN-10: 0-13-257627-9 (alk. paper)
+1. Java (Computer program language) 2. Data structures (Computer science)
+3. Computer algorithms. I. Title.
+QA76.73.J38W448 2012
+005.1¨Cdc23 2011035536
+15 14 13 12 11¡ªCRW¡ª10 9 8 7 6 5 4 3 2 1

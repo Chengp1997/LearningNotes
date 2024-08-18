@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1527505026 source:d:\codeblocks\lab2\main.cpp
+	<iostream>
+	<mutex>
+	<thread>
+	<condition_variable>
+
+1527516828 source:c:\users\emily_chen\desktop\lab2\main.cpp
+	<iostream>
+	<mutex>
+	<thread>
+	<condition_variable>
+

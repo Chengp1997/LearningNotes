@@ -1,0 +1,15 @@
+﻿<style>
+   .portTable td:not(:last-child) {
+      width:85px;
+   }
+</style>
+<div>
+   <table class="portTable">
+      <tr id="groupTcpPort"></tr>
+   </table>
+</div>
+<script>
+   renderRadioGroup($("#groupTcpPort"), "ServerSettings.CurrentConfig.ServerConfiguration.Engine.PacketGenSettings.TCPPort",{FormatString: "<td>{0}</td>"});
+</script>
+Not every router supports TCP traceroute, if you get jumbled packets and unreasonable numbers, this could be a culprit. This method
+is only exercising the network, and not the server software itself.

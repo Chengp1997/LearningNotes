@@ -1,0 +1,243 @@
+﻿{
+  "Root": {
+    "Trait": [
+      {
+        "Type": "TextBox",
+        "Setting": "ClientSettings.CurrentConfig.ClientConfiguration.Name",
+        "Label": "Configuration Name:",
+        "Attributes": { "MaxChars": 20 }
+      },
+      {
+        "Type": "Label",
+        "Label": "Description"
+      },
+      {
+        "Type": "TextArea",
+        "Label": "Configuration Description:",
+        "Setting": "ServerSettings.CurrentConfig.Shared.Description"
+      },
+      {
+        "Type": "Label",
+        "Label": "Each configuration can be associated with one or more targets, and control the way data is collected and displayed for those targets."
+      },
+      {
+        "Type": "Checkbox",
+        "Setting": "ClientSettings.General.AutoShowTimelineGraphsForTargetsOnSummary",
+        "Label": "Automatically show timeline graphs for targets added to summary screen.",
+        "Hint": "When a new target is added to the summary screen, its time graph will also appear if this option is enabled."
+      },
+      {
+        "Type": "Checkbox",
+        "Setting": "ClientSettings.General.IconInToolTray",
+        "Label": "Put Icon in tool tray?",
+        "Hint": "Enable this to turn on the tray icon. Minimizing PingPlotter will also show it only in the tray."
+      },
+      {
+        "Type": "Checkbox",
+        "Setting": "ClientSettings.General.ShowRoundTripTimeRow",
+        "Label": "Show \"Round Trip Time\" row?",
+        "Hint": "Should the \"Round Trip Time\" row be shown on the main graph? This row always matches the final destination (if it's responding), and makes it easier to understand if the route is complete, and what the round trip time is."
+      },
+      {
+        "Type": "Checkbox",
+        "Setting": "ClientSettings.General.MinimizeWhenWindowClosed",
+        "Label": "Minimize PingPlotter window ​when​ close command is used",
+        "Hint": "If the \"X\" is hit in the upper right corner, minimize PingPlotter instead of closing it.  Use File -> Exit to close PingPlotter."
+      },
+      {
+        "Type": "Combobox",
+        "Setting": "ClientSettings.ShowWelcomeScreen",
+        "Label": "Show welcome splash on startup",
+        "Attributes": {
+          "Items": [
+            {
+              "Value": -1,
+              "Text": "Never"
+            },
+            {
+              "Value": 0,
+              "Text": "Show, but hide ASAP"
+            },
+            {
+              "Value": 5,
+              "Text": "5 seconds (or when clicked-away)"
+            },
+            {
+              "Value": 10,
+              "Text": "10 seconds"
+            },
+            {
+              "Value": 20,
+              "Text": "20 seconds"
+            },
+            {
+              "Value": -2,
+              "Text": "Till Closed"
+            }
+          ]
+        },
+        "Name": "ShowOnStartupCB"
+      },
+      {
+        "Type": "Checkbox",
+        "Setting": "ClientSettings.General.IncludeSettingsNameInTargetDesc",
+        "Label": "Include Settings name with target / host descriptions",
+        "Hint": "When tracing to multiple targets, using multiple named settings, enable this option to differentiate between targets using different settings."
+      },
+      {
+        "Type": "NavigationItem",
+        "Setting": "ClientSettings.CurrentConfig.ClientConfiguration.DisplaySettings",
+        "Label": "Display"
+      },
+      {
+        "Type": "TextBox",
+        "Setting": "ServerSettings.CurrentConfig.ServerConfiguration.Shared.LatencyLevelWarn",
+        "Label": "Warning (yellow) speed",
+        "Hint": "The speed at which warning colors occur.",
+        "Attributes": {
+          "MaxChars": 4,
+          "Postfix": "ms"
+        }
+      },
+      {
+        "Type": "TextBox",
+        "Setting": "ServerSettings.CurrentConfig.ServerConfiguration.Shared.LatencyLevelCritical",
+        "Label": "Critical (red) speed",
+        "Hint": "The speed at which error colors occur.",
+        "Attributes": {
+          "AlignmentGroup": "Group1",
+          "MaxChars": 4,
+          "Postfix": "ms"
+        }
+      },
+      {
+        "Type": "Checkbox",
+        "Setting": "ClientSettings.CurrentConfig.ClientConfiguration.DisplaySettings.DrawLineToShowMinMaxRange",
+        "Label": "Draw line to show Min/Max range"
+      },
+      {
+        "Name": "graphScaleGroup",
+        "Type": "RadioGroup",
+        "Setting": "ClientSettings.CurrentConfig.ClientConfiguration.DisplaySettings.ScaleSampleTimesMS",
+        "Label": "Graph Scale",
+        "Attributes": {
+          "Items": [
+            {
+              "Text": "Automatically scale to last visible time graph's sample times",
+              "Value": -2,
+              "Hint": "(default) This gives a good ability to compare each hop with others in the same route, since they are scaled together."
+            },
+            {
+              "Text": "Automatically scale to individual graph sample times",
+              "Value": -1,
+              "Hint": "This is useful when you want the best resolution for each individual host."
+            },
+            {
+              "Text": "Scale to:",
+              "Hint": "Set the graph scale manually.  This can be used when bad line conditions make a graph unreadably erratic.",
+              "EditorTrait": "ClientSettings.CurrentConfig.ClientConfiguration.DisplaySettings.ScaleSampleTimeMS_Editor",
+              "ID": "SampleScaleEditor",
+              "Default": 250,
+            }
+          ]
+        }
+      },
+      {
+        "Name": "ClientSettings.CurrentConfig.ClientConfiguration.DisplaySettings.ScaleSampleTimeMS_Editor",
+        "Type": "TextBox",
+        "Setting": "ClientSettings.CurrentConfig.ClientConfiguration.DisplaySettings.ScaleSampleTimesMS",
+        "Attributes": {
+          "Postfix": "ms",
+          "MaxChars": 5
+        },
+        "Hint": "Set the graph scale manually.  This can be used when bad line conditions make a graph unreadably erratic."
+      },
+      {
+        "Name": "packetLossScaleGroup",
+        "Type": "RadioGroup",
+        "Setting": "ClientSettings.CurrentConfig.ClientConfiguration.DisplaySettings.LostPacketPc",
+        "Label": "Packet Loss",
+        "Attributes": {
+          "Items": [
+            {
+              "Text": "Don't graph packet loss",
+              "Hint": "Turn off graphing of packet loss - on trace and time graphs (Not recommended).",
+              "Value": -1
+            },
+            {
+              "EditorTrait": "ClientSettings.CurrentConfig.ClientConfiguration.DisplaySettings.LostPacketPc_Editor",
+              "Text": "Packet loss Scale at %",
+              "Hint": "Select the maximum range for the packet loss bars - on both the upper and lower graphs.",
+              "ID": "PacketLossEditor",
+              "Default": 30
+
+            }
+          ]
+        }
+      },
+      {
+        "Name": "ClientSettings.CurrentConfig.ClientConfiguration.DisplaySettings.LostPacketPc_Editor",
+        "Type": "TextBox",
+        "Setting": "ClientSettings.CurrentConfig.ClientConfiguration.DisplaySettings.LostPacketPc",
+        "Hint": "Select the maximum range for the packet loss bars - on both the upper and lower graphs. Default is 30%.",
+        "Attributes": {
+          "MaxChars": 5
+        }
+      },
+      {
+        "Type": "Checkbox",
+        "Setting": "ClientSettings.CurrentConfig.ClientConfiguration.DisplaySettings.ShowJitterGraphs",
+        "Label": "Add jitter graph above time graphs?"
+      },
+      {
+        "Type": "TextBox",
+        "Setting": "ClientSettings.CurrentConfig.ClientConfiguration.DisplaySettings.JitterGraphHeight",
+        "Label": "Graph Height",
+        "Attributes": {
+          "AlignmentGroup": "Group1",
+          "MaxChars": 4,
+          "Postfix": "points"
+        }
+      },
+      {
+        "Type": "TextBox",
+        "Setting": "ClientSettings.CurrentConfig.ClientConfiguration.DisplaySettings.JitterHideHeight",
+        "Label": "Hide if area shorter than",
+        "Attributes": {
+          "AlignmentGroup": "Group1",
+          "MaxChars": 4,
+          "Postfix": "points"
+        }
+      },
+      {
+        "Name": "groupJitterScale",
+        "Type": "RadioGroup",
+        "Setting": "ClientSettings.CurrentConfig.ClientConfiguration.DisplaySettings.ScaleJitterMS",
+        "Label": "Jitter Scale",
+        "Attributes": {
+          "Items": [
+            {
+              "Text": "Automatically scale to individual jitter values",
+              "Value": "-1"
+            },
+            {
+              "Text": "Scale to:",
+              "EditorTrait": "ClientSettings.CurrentConfig.ClientConfiguration.DisplaySettings.ScaleJitterMS_Editor",
+              "Default": 30
+            }
+          ]
+        }
+      },
+      {
+        "Type": "TextBox",
+        "Name": "ClientSettings.CurrentConfig.ClientConfiguration.DisplaySettings.ScaleJitterMS_Editor",
+        "Hint": "Enter a Jitter scale, in MS",
+        "Setting": "ClientSettings.CurrentConfig.ClientConfiguration.DisplaySettings.ScaleJitterMS",
+        "Attributes": {
+          "Postfix": "ms",
+          "MaxChars": 5
+        }
+      }
+    ]
+  }
+}
