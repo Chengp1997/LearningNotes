@@ -1,1 +1,0 @@
-Dataset can be downloaded here: https://www.kaggle.com/zihanli1/beijing-airbnb-dataclean 

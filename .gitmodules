@@ -1,3 +1,13 @@
 [submodule "AWS-Learning-Resources"]
 	path = AWS-Learning-Resources
 	url = https://github.com/Chengp1997/AWS-Learning-Resources
+
+[submodule "VT-Courses/Blockchain-Technologies/Project"]
+	path = VT-Courses/Blockchain-Technologies/Project
+	url = https://github.com/Chengp1997/Blockchain-Technologies-Course-code
+[submodule "VT-Courses/Machine Learning With Big Data/Project"]
+	path = VT-Courses/Machine Learning With Big Data/Project
+	url = https://github.com/Chengp1997/Prediction-of-Airbnb-short-term-rental-housing-value-in-Beijing
+[submodule "VT-Courses/Web-Development-Project"]
+	path = VT-Courses/Web-Development-Project
+	url = https://github.com/Chengp1997/Bookstore
