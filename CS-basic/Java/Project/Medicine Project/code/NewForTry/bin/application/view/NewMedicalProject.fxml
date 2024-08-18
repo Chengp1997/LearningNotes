@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="600.0" minWidth="675.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.NewMedicineProjectController">
+   <children>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="700.0" prefWidth="750.0">
+         <children>
+            <Label layoutX="35.0" layoutY="25.0" text="项目名称">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="35.0" layoutY="275.0" text="收费类别" />
+            <Label layoutX="35.0" layoutY="325.0" text="收费项目等级" />
+            <Label layoutX="35.0" layoutY="125.0" text="医院等级" />
+            <Label layoutX="35.0" layoutY="375.0" prefHeight="20.0" prefWidth="99.0" text="是否需要审批" />
+            <Label layoutX="35.0" layoutY="175.0" text="单位" />
+            <Label layoutX="35.0" layoutY="225.0" text="备注" />
+            <Label layoutX="35.0" layoutY="475.0" text="限制使用范围" />
+            <Label layoutX="35.0" layoutY="425.0" text="生产厂家" />
+            <Label layoutX="35.0" layoutY="72.0" text="项目编码">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Button layoutX="167.0" layoutY="648.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleOK" text="确定" />
+            <Button layoutX="400.0" layoutY="648.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleCancle" text="取消" />
+            <TextField fx:id="ID" layoutX="167.0" layoutY="70.0" />
+            <TextField fx:id="factory" layoutX="167.0" layoutY="420.0" />
+            <TextField fx:id="unit" layoutX="167.0" layoutY="170.0" />
+            <TextField fx:id="notes" layoutX="167.0" layoutY="220.0" />
+            <TextField fx:id="scopeOfUse" layoutX="167.0" layoutY="470.0" />
+            <TextField fx:id="name" layoutX="167.0" layoutY="24.0" />
+            <ChoiceBox fx:id="chargeType" layoutX="167.0" layoutY="270.0" prefHeight="30.0" prefWidth="202.0" />
+            <ChoiceBox fx:id="hospitalLevel" layoutX="167.0" layoutY="120.0" prefHeight="30.0" prefWidth="202.0" />
+            <ChoiceBox fx:id="chargeLevel" layoutX="167.0" layoutY="320.0" prefHeight="30.0" prefWidth="202.0" />
+            <ChoiceBox fx:id="approval" layoutX="167.0" layoutY="370.0" prefHeight="30.0" prefWidth="202.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
