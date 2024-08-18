@@ -11,3 +11,6 @@
 [submodule "VT-Courses/Web-Development-Project"]
 	path = VT-Courses/Web-Development-Project
 	url = https://github.com/Chengp1997/Bookstore
+[submodule "CS-basic/Algorithm/Project/DatastructureProject"]
+	path = CS-basic/Algorithm/Project/DatastructureProject
+	url = https://github.com/Chengp1997/Scenic-spot-management-system
