@@ -1,7 +1,3 @@
-[submodule "AWS-Learning-Resources"]
-	path = AWS-Learning-Resources
-	url = https://github.com/Chengp1997/AWS-Learning-Resources
-
 [submodule "VT-Courses/Blockchain-Technologies/Project"]
 	path = VT-Courses/Blockchain-Technologies/Project
 	url = https://github.com/Chengp1997/Blockchain-Technologies-Course-code
